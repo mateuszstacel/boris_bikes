@@ -9,9 +9,9 @@ describe DockingStation do
      expect(bike).to be_working
    end
 
-     it 'allows user to dock bike at station' do
+     context 'allows user to dock bike at station' do
        #expect(subject).to respond_to :dock
-        is_expected.to respond_to(:dock).with(1).argument
+      it { is_expected.to respond_to(:dock).with(1).argument }
      end
 
      it 'docking a bike stores adds a bikes at the station' do
@@ -19,5 +19,8 @@ describe DockingStation do
      expect(subject.dock(bike)).to eq bike
    end
 
+      it 'raises' do
+        expect { subject.release_bike }.to raise_error("nameerror")
+      end
 
   end

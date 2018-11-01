@@ -9,6 +9,7 @@ attr_reader :bike
 
   def dock(bike)
     @bike = bike
+    
 
   end
 
